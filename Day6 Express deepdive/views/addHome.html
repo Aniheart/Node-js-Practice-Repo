@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Home to airbnb</title>
+        <link rel="stylesheet" href="/output.css">
+  </head>
+  <body>
+    <header >
+      <h1 class="text-red-500 bg-slate-200 text-5xl border-2 border-slate-100 p-5 flex justify-center font-bold
+       rounded-xl ">Register your home here</h1>
+    </header>
+    <main class="flex flex-col items-center">
+      <form action="/host/add-home" method="POST" 
+      class=" flex flex-col gap-4"
+      >
+        <input
+          type="text"
+          name="houseName"
+          placeholder="Enter the name of your house"
+         class="border-2 border-slate-200 w-screen p-2 mt-4 rounded-xl"
+        />
+        <input type="submit"  
+        class="bg-green-200 rounded-xl flex w-1/2"
+        />
+      </form>
+    </main>
+  </body>
+</html>
