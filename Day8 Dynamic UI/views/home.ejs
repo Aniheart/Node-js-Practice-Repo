@@ -1,0 +1,32 @@
+<%- include('partials/head') %>
+  </head>
+  <body>
+   
+     <%- include('partials/navbar') %>
+    
+<main class="container mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 max-w-xl">
+      <h2 class="text-3xl text-red-500 font-bold text-center mb-6">
+        Here are our registered homes:
+      </h2>
+      
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <% registeredHome.forEach(home => { %>
+          <li class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img src="<%= home.photo %>" alt="<%= home.houseName %>" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-800 mb-1"><%= home.houseName %></h3>
+              <p class="text-gray-600 mb-2">Location: <span class="font-medium text-gray-800"><%= home.location %></span></p>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-green-600">$<%= home.price %></span>
+                <div class="flex items-center text-yellow-500">
+                  <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.966a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118L10 13.347l-3.38 2.455c-.784.57-1.84-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.623 9.393c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69L9.05 2.927z"/></svg>
+                  <span class="text-sm text-gray-800"><%= home.rating %></span>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

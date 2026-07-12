@@ -4,12 +4,16 @@ const hostRouter = express.Router()
 const rootdir = require("../utils/pathUtil")
 
 hostRouter.get("/add-home", (req, res, next) => {
-  res.sendFile(path.join(rootdir, "views", "addHome.html"))
+res.render('addHome', {pageTitle:'Add Home to airbnb'})
 })
-
+const registeredHome = []
 hostRouter.post("/add-home",(req,res, next)=>{
-    res.sendFile(path.join(rootdir, "views" , "homeAdded.html"))
+res.render('homeAdded', {pageTitle: 'Home added successfully'})   
+    registeredHome.push({houseName : req.body.houseName, price:req.body.price, location:req.body.location,
+        rating:req.body.rating, photo:req.body.photo,
+    })
+    
 })
-
-module.exports = hostRouter
+exports.hostRouter = hostRouter;
+exports.registeredHome = registeredHome;
 
