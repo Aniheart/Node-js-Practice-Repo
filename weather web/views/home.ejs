@@ -1,0 +1,23 @@
+<%- include('partials/home_partials') %>
+<body>
+<form action="/city-detail" method="POST" class="max-w-sm mx-auto mt-3">
+  <label for="website-admin" class="block mb-2.5 text-sm font-medium text-heading">City</label>
+ <%- include('partials/location_icon') %>
+
+
+    <input type="text" name="city" class="rounded-r-xl rounded-e-base block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand placeholder:text-body" placeholder="Enter city">
+</div>
+<div class="mt-3">
+      <input type="submit" value="Submit"
+      class="bg-blue-500
+      px-5 py-1
+      text-amber-50
+      rounded-xl rounded-base block w-full 
+      "
+      >
+
+</div>
+</form>
+
+</body>
+</html>
